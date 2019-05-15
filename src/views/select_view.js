@@ -6,6 +6,7 @@ const PubSub = require('../helpers/pub_sub.js');
 
     SelectView.prototype.bindEvents = function () {
         PubSub.subscribe('Families:options-ready', (event) => {
+            console.log(event.detail)
             const allFamilies = event.detail;
             this.populate(allFamilies);
         });
